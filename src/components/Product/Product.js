@@ -31,7 +31,7 @@ function Product({ id, title, image, price, rating }) {
 
         <p className="product__price">
           <small>$</small>
-          <strong>{price}</strong>
+          <strong>{price.toFixed(2)}</strong>
         </p>
         
         <div className="product__rating">
