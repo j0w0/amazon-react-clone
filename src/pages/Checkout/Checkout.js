@@ -7,7 +7,7 @@ import CheckoutProduct from '../../components/CheckoutProduct/CheckoutProduct';
 
 const Checkout = () => {
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className='checkout'>
@@ -19,9 +19,8 @@ const Checkout = () => {
           className="checkout__ad"
         />
         <div>
-          <h2 className="checkout__title">
-            Your Shopping Cart
-          </h2>
+          <h3>Hello, {user ? user?.email : `Guest`}!</h3>
+          <h2 className="checkout__title">Your Shopping Cart</h2>
 
           {basket.map((item, idx) => {
             const { id, title, image, price, rating } = item;
